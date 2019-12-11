@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>map-gen</title>
+    <style media="screen">
+      body {
+        margin: 0 50px;
+        width: 512px;
+      }
+      #canvas {
+        display: block;
+        margin: 50px 0;
+        border: 10px solid rgb(101, 101, 101);
+        border-radius: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Völundarhús með BFS</h1>
+    <p>Hér er breadth first search notað til að skoða völundarhúsið. Byrjunarreitur er valinn af handahófi fyrir hvert völundarhús.</p>
+    <p>stærð: <input id="maze_size" type="range" min="3" max="15"></p>
+    <script type="module" src="bfs_maze.js"></script>
+    <canvas id="canvas"></canvas>
+    <button id="reset">new board</button><br>
+    <button id="next-step">step forward</button>
+    <button id="play">play</button><br>
+    <button id="toggle-modes">toggle between distance and number</button><br>
+  </body>
+</html>

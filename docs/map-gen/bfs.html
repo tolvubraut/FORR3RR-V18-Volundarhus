@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>map-gen</title>
+    <style media="screen">
+      body {
+        margin: 0 50px;
+        width: 512px;
+      }
+      #canvas {
+        display: block;
+        margin: 50px 0;
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Breadth first search</h1>
+    <p>Þetta er grunnur ýmissa leitar-reiknirita. BFS notar FIFO gagnaskipan til að skoða í allar áttir jafn hratt. Fyrir hvern punk eru allir óskoðaðir nágrannar settir í biðröðina. Notið toggle hnappinn til að sjá betur hvernig þessi forgangsröðun virkar.</p>
+    <p>Hver einasti punktur bendir á punktinn á undan og þannig er hægt að finna stystu leið að byrjunarreitnum frá hvaða punkti sem er með því að fylgja leiðinni sem þeir benda á.</p>
+    <p>Bleiku reitinir eru veggir. Það væri hægt að tákna þá sem línur á milli reita með örlítilli breytingu á get_neighbors fallinu. Þá væri hægt að nýta grid-plássið betur, og ég hef útfært backtracking reiknirit til að skapa skemmtileg <a href="./maze.html">völundarhús</a> sem nota þessa hugmynd.</p>
+    <canvas id="canvas"></canvas>
+    <button id="next-step">step forward</button>
+    <button id="reset">new board</button>
+    <button id="toggle-modes">toggle between distance and number</button>
+    <script type="module" src="bfs.js"></script>
+  </body>
+</html>

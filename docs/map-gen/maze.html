@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>map-gen</title>
+    <style media="screen">
+      body {
+        margin: 0 50px 100px 50px;
+        width: 512px;
+      }
+      #canvas {
+        display: block;
+        margin: 50px 0;
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Backtracking völundarhús</h1>
+    <p>Þessi síða er til að sýna það hvernig backtracking reikniritið virkar, skref fyrir skref. <br>Karakterinn stígur yfir á handahófskenndan nágrannareit, en stígur bara einu sinni á hvern reit. Þegar enginn möguleiki er til, þá stígur hann einu skrefi til baka. Þegar hann er kominn á byrjunarreit þá er völundarhúsið tilbúið!</p>
+    <p>Næsta skref er að setja sjálfan generation kóðann í module sem væri hægt að kalla á í öðrum kóða, þannig að það sé hægt að <a href="./bfs_maze.html">nota völundarhúsið í BFS</a> og öðrum leitar-reikniritum.</p>
+    <p>stærð: <input id="maze_size" type="range" min="3" max="15"></p>
+    <canvas id="canvas"></canvas>
+    <button id="next-step">step forward</button>
+    <button id="play">play</button>
+    <button id="reset">new maze!</button>
+    <script type="module" src="maze.js"></script>
+  </body>
+</html>
