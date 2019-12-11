@@ -97,7 +97,11 @@ textarea {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
-img, iframe {  height: auto;  width: 100%;
+iframe { 
+      width: 100%;
+      max-width: 960px;
+}
+img {  height: auto;  width: 100%;
       max-width: 960px;
 }
 .wrapper {
