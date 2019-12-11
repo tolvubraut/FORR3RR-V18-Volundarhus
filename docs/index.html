@@ -1,1 +1,67 @@
-s
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+
+  <meta name="theme-color" content="#fafafa">
+</head>
+
+<body>
+  <h1>Reiknirit</h1>
+  <hr>
+  <p>Neptúnus Egilsson - Vor 2018</p>
+  <p>Viðfangsefni: Völundarhús og pathfinding : Graph traversal</p>
+ 
+  <hr>
+   <ul>
+    <li><a href="map-gen/bfs.html">breadth-first-search</a></li>
+    <li><a href="map-gen/maze.html">völundarhúsa-generator</a></li>
+    <li><a href="map-gen/bfs_maze.html">völundarhúsa-generatorinn með bfs</a></li>
+  </ul>
+
+<iframe width="1600" height="689" src="https://www.youtube.com/embed/KmewdHcUJyg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+ 
+
+  <p>Tilviljanakennd umhverfi hafa verið notuð í tölvuleikjum síðan Beneath Apple Manor kom á markaðinn 1978. Þau hafa verið sérstaklega vinsæl á síðustu árum í leikjum eins og Minecraft, svo ekki sé minnst á heilan flokk leikja sem eru kallaðir „Roguelike“ — sem er tilvísun í leikinn Rogue frá 1980.  
+Ég er einn þeirra sem hef fundið mig knúinn til að spila þessi handahófskenndu ævintýri í leit að fjársjóðum og hættulegum skepnum til að vinna bug á. Þannig fannst mér það tilvalin hugmynd að skoða það hvernig þessi umhverfi eru sett saman. Reyndar byrjaði ég ekki á sjálfum umhverfunum, heldur fór ég að skoða það hvernig línur eru dregnar gegnum þau - ekki bara til að finna leiðir fyrir persónur leikjanna til að fylgja, heldur líka til að taka ákvarðanir um það hvernig þrautir gætu verið hannaðar tilviljanakennt til að vera leysanlegar.  
+Svarið reyndist vera að umhverfi í slíkum leikjum eru táknuð sem gröf. Hver einasti punktur, sem gæti verið hnit í hnitakerfi eða jafnvel herbergi í byggingu (því að hugmyndin er ekki bundin við tiltekna útfærslu) er tengdur við einhverja aðra og þessar tengingar mynda saman þær leiðir sem hægt er að taka gegnum umhverfin.
+Þá er ein einfaldasta leiðin til að finna allar leiðir frá tilteknu hniti í grafinu að beita svokölluðu [breadth-first-search]. Eftirfarandi hreyfimynd sýnir hvernig farið er í gegnum tréð (og útskýrir nafnið, ef það var ekki skýrt þegar!).
+
+<img src="/map-gen/images/traversal.gif"> 
+</p>
+
+<hr>
+<p>Þá fór ég að hugsa um upprunalegu hugmyndinar mínar, sem tengdust því að búa til handahófskennd umhverfi, og sérstaklega fyrir tölvuleiki. Mér finnst völundarhús eiga vel við, svo ég bjó til [völundarhúsa-generator][maze]. Mér fannst mikilvægt að geta sýnt það skref fyrir skref hvað væri að gerast í öllu sem ég tók mér fyrir hendur, svo að ég útfærði reikniritin öll þannig að eitt skref væri eitt kall í sama fallið. Það vafðist svolítið fyrir mér að teikna völundarhúsið upp í canvas, en þegar grindin var komin reyndist það auðvelt að tengja við það slider fyrir stærð, play-fall og smá grafík (tekin frá [github:calref/cboe][cboe]) til að setja allt í ævintýralegt samhengi. </p>
+<hr>
+
+<p>Ég var orðinn tæpur á tíma, en það var ennþá svo margt til að skoða! BFS notar queue fyrirbærið til að ákveða hvað á að skoða næst, en það er hægt að nota eitthvað sem heitir weighted queue með ákveðnum heuristics til að búa til gáfulegri pathfinding föll. Þannig kemst maður hjá því að skoða alveg jafn marga punkta til að komast að endanum. Innan völundarhúsa-generation er líka mjög margt áhugavert. Backtracking býr til löng og dálítið "klassísk" völundarhús sem bjóða bara upp á eina leið frá hverjum einum punkti að öðrum, en það er ekki það eina sem er í boði. Misjöfn stærð herbergja er klárlega eitthvað sem tengist beint inn í tölvuleikjagerð og ég hef áhuga á að kanna það nánar í framtíðinni.  
+</p>
+
+<p>Til að tengja þetta tvennt saman þá ákvað ég að útfæra völundarhúsa-generatorinn sem module og gerði smávegis breytingar á [BFS forritinu][bfs-maze] til að það gæti skoðað gröfin sem að hún spýtir út. Það er sérstaklega gaman að fylgjast með því þegar byrjunarpunkturinn lendir í miðjunni á völundarhúsi sem hefur margar langar leiðir.
+</p>
+
+<hr>
+<p>Heimildir:</p>
+<ul>
+  <li><a href="https://github.com/calref/cboe">cboe</a></li>
+  <li><a href="https://www.redblobgames.com/pathfinding">fyrir allt sem tengist pathfinding. </a></li>
+  <li><a href="http://weblog.jamisbuck.org/2010/12/27/maze-generation-recursive-backtracking">veitti mér alla kunnáttu sem ég gat hugsað mér um völundarhús.</a></li>
+</ul>  
+
+  <script src="js/vendor/modernizr-3.7.1.min.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+</html>
